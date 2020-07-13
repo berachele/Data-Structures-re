@@ -1,3 +1,4 @@
+
 """
 A stack is a data structure whose primary purpose is to store and
 return elements in Last In First Out order. 
@@ -13,13 +14,17 @@ return elements in Last In First Out order.
 class Stack:
     def __init__(self):
         self.size = 0
-        # self.storage = ?
+        self.storage = []
 
     def __len__(self):
-        pass
+        return self.size
 
     def push(self, value):
-        pass
+        self.size += 1
+        self.storage.append(value)
 
     def pop(self):
-        pass
+        if self.__len__() == 0:
+            return None
+        self.size -= 1
+        return self.storage.pop(-1)
